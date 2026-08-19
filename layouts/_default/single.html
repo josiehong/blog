@@ -6,4 +6,10 @@
 <h2>{{ .Title }}</h2>
 
 {{ .Content }}
+
+{{ with .GetTerms "tags" }}
+<div class="post-tags">
+    {{ range . }}<a class="paper-link" href="{{ .RelPermalink }}">{{ .LinkTitle | lower }}</a>{{ end }}
+</div>
+{{ end }}
 {{ end }}

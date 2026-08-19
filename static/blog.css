@@ -109,3 +109,58 @@ pre code {
 .blog-header + h2 {
     margin-top: 8px;
 }
+
+/* =============================================================
+   SEARCH PAGE
+   ============================================================= */
+.search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+    color: var(--ink);
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    margin: 8px 0 4px 0;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
+.search-status {
+    color: var(--mist);
+    font-size: 10.5pt;
+    min-height: 1.2em;
+}
+
+/* =============================================================
+   TAGS
+   ============================================================= */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tag-count {
+    color: var(--mist);
+}
+
+.paper-link:hover .tag-count {
+    color: white;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}

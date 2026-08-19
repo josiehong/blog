@@ -1,0 +1,51 @@
+{{ define "main" }}
+<h2>Search</h2>
+
+<input type="search" id="search-input" class="search-input" placeholder="Search posts..." autocomplete="off" autofocus />
+<p id="search-status" class="search-status"></p>
+<ul class="blog-list" id="search-results"></ul>
+
+<script>
+(function () {
+    let index = null;
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('search-results');
+    const status = document.getElementById('search-status');
+
+    fetch('{{ "index.json" | relURL }}')
+        .then(function (r) { return r.json(); })
+        .then(function (data) { index = data; if (input.value) run(input.value); });
+
+    function esc(s) {
+        return s.replace(/[&<>"']/g, function (c) {
+            return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+        });
+    }
+
+    function run(q) {
+        results.innerHTML = '';
+        q = q.trim().toLowerCase();
+        if (!q || !index) { status.textContent = ''; return; }
+        const terms = q.split(/\s+/);
+        const hits = index.filter(function (p) {
+            const hay = (p.title + ' ' + (p.tags || []).join(' ') + ' ' + p.content).toLowerCase();
+            return terms.every(function (t) { return hay.indexOf(t) !== -1; });
+        });
+        status.textContent = hits.length ? hits.length + ' result' + (hits.length > 1 ? 's' : '') : 'No results.';
+        hits.forEach(function (p) {
+            const li = document.createElement('li');
+            li.className = 'blog-item';
+            li.innerHTML =
+                '<div class="blog-header">' +
+                (p.category ? '<span class="blog-tag blog-tag--' + esc(p.category.toLowerCase().replace(/\s+/g, '-')) + '">' + esc(p.category) + '</span>' : '') +
+                '<span class="blog-date">' + esc(p.date) + '</span>' +
+                '</div>' +
+                '<div class="blog-title"><a href="' + esc(p.url) + '">' + esc(p.title) + '</a></div>';
+            results.appendChild(li);
+        });
+    }
+
+    input.addEventListener('input', function () { run(input.value); });
+})();
+</script>
+{{ end }}

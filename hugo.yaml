@@ -14,7 +14,14 @@ params:
   description: "Yuhui (Josie) Hong's blog — study notes, projects, and wild thoughts."
   author: Yuhui Hong
 
-disableKinds: ["taxonomy", "term"]
+taxonomies:
+  tag: tags
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # search index
 
 markup:
   goldmark:

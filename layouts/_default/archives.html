@@ -1,0 +1,22 @@
+{{ define "main" }}
+<h2>Archive</h2>
+
+{{ range (where site.RegularPages "Section" "posts").GroupByDate "2006" }}
+<div class="timeline-group">
+    <div class="timeline-year">{{ .Key }}</div>
+    <div class="timeline-papers">
+        <ul class="blog-list">
+            {{ range .Pages }}
+            <li class="blog-item">
+                <div class="blog-header">
+                    {{ with index .Params.categories 0 }}<span class="blog-tag blog-tag--{{ . | urlize }}">{{ . }}</span>{{ end }}
+                    <span class="blog-date">{{ .Date.Format "Jan. 2" }}</span>
+                </div>
+                <div class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}
+{{ end }}
