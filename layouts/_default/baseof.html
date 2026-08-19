@@ -14,8 +14,10 @@
 
     <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}" />
 
-    <link rel="stylesheet" href="{{ "main.css" | relURL }}" />
-    <link rel="stylesheet" href="{{ "blog.css" | relURL }}" />
+    {{ $main := resources.Get "main.css" | fingerprint }}
+    {{ $blog := resources.Get "blog.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ $main.RelPermalink }}" />
+    <link rel="stylesheet" href="{{ $blog.RelPermalink }}" />
 
     <!-- Fonts from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,14 +42,13 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <a href="{{ site.Home.RelPermalink }}" class="site-brand">{{ site.Title }}</a>
         <button class="hamburger" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <ul class="navbar">
-            <li><a href="{{ site.Home.RelPermalink }}" {{ if .IsHome }}class="active"{{ end }}>Posts</a></li>
+            <li><a href="{{ site.Home.RelPermalink }}" {{ if .IsHome }}class="active"{{ end }}>{{ site.Title }}</a></li>
             <li><a href="{{ "archives/" | relURL }}" {{ if eq .Layout "archives" }}class="active"{{ end }}>Archive</a></li>
             <li><a href="{{ "search/" | relURL }}" {{ if eq .Layout "search" }}class="active"{{ end }}>Search</a></li>
             <li><a href="{{ "tags/" | relURL }}" {{ if in (slice "taxonomy" "term") .Kind }}class="active"{{ end }}>Tags</a></li>
@@ -66,7 +67,8 @@
         <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </section>
 
-    <script src="{{ "menu.js" | relURL }}"></script>
+    {{ $menu := resources.Get "menu.js" | fingerprint }}
+    <script src="{{ $menu.RelPermalink }}"></script>
 </body>
 
 </html>

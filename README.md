@@ -44,13 +44,13 @@ GitHub Actions rebuilds and deploys on every push to `main`; the post appears on
 
 ## Keeping the style in sync
 
-`static/main.css` is a copy of the homepage's `main.css`. After changing styles in the homepage repo, re-sync it:
+`assets/main.css` is a copy of the homepage's `main.css`. After changing styles in the homepage repo, re-sync it:
 
 ```bash
-cp ../josiehong.github.io/main.css static/main.css
+cp ../josiehong.github.io/main.css assets/main.css
 ```
 
-Blog-only styles (post pages, search box, tag cloud) live in `static/blog.css`.
+Blog-only styles (post pages, search box, tag cloud, nav wordmark) live in `assets/blog.css`. Both files are fingerprinted at build time, so browsers always fetch the version matching the deployed HTML — no stale-CSS issues.
 
 ## Setup on a new machine
 
