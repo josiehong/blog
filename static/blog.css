@@ -105,19 +105,6 @@ pre code {
     margin-top: 15px !important;
 }
 
-/* =============================================================
-   BLOG READING SIZE — long-form posts read better slightly larger
-   than the homepage's 10pt. Overrides main.css (loaded after it).
-   ============================================================= */
-#content p,
-#content li {
-    font-size: 11pt;
-}
-
-code {
-    font-size: 0.85em;
-}
-
 /* Post header: tag chip + date above the title */
 .blog-header + h2 {
     margin-top: 8px;
