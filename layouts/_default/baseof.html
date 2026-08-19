@@ -40,14 +40,14 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
+        <a href="{{ site.Home.RelPermalink }}" class="site-brand">{{ site.Title }}</a>
         <button class="hamburger" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <ul class="navbar">
-            <li><a href="{{ "/" | relURL }}">{{ site.Title }}</a></li>
-            <li><a href="{{ "/" | relURL }}" {{ if .IsHome }}class="active"{{ end }}>Posts</a></li>
+            <li><a href="{{ site.Home.RelPermalink }}" {{ if .IsHome }}class="active"{{ end }}>Posts</a></li>
             <li><a href="{{ "archives/" | relURL }}" {{ if eq .Layout "archives" }}class="active"{{ end }}>Archive</a></li>
             <li><a href="{{ "search/" | relURL }}" {{ if eq .Layout "search" }}class="active"{{ end }}>Search</a></li>
             <li><a href="{{ "tags/" | relURL }}" {{ if in (slice "taxonomy" "term") .Kind }}class="active"{{ end }}>Tags</a></li>

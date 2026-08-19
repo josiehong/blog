@@ -164,3 +164,45 @@ pre code {
     padding-top: 14px;
     border-top: 1px solid var(--line);
 }
+
+/* =============================================================
+   SITE BRAND — the blog wordmark, distinct from the nav tabs.
+   Sits on the left; the menu items group to the right.
+   ============================================================= */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-brand {
+    font-size: 13pt;
+    font-weight: 500;
+    color: var(--ink);
+    padding: 14px 20px 14px 0;
+    white-space: nowrap;
+}
+
+.site-brand:hover {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.navbar {
+    width: auto;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 0 10px;
+    }
+
+    .site-brand {
+        padding-left: 10px;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+}
