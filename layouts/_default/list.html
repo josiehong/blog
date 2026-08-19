@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h2>{{ .Title }}</h2>
+{{ .Content }}
+<ul class="blog-list">
+    {{ range .Pages }}
+    <li class="blog-item">
+        <div class="blog-header">
+            {{ with index .Params.categories 0 }}<span class="blog-tag blog-tag--{{ . | urlize }}">{{ . }}</span>{{ end }}
+            <span class="blog-date">{{ .Date.Format "Jan. 2, 2006" }}</span>
+        </div>
+        <div class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<h2> Blogs </h2>
+<p>
+    Welcome to my blog! Here, I share my thoughts and study notes on a variety of topics.
+    I hope you enjoy exploring these ideas with me!
+</p>
+
+<ul class="blog-list">
+    {{ range where site.RegularPages "Section" "posts" }}
+    <li class="blog-item">
+        <div class="blog-header">
+            {{ with index .Params.categories 0 }}<span class="blog-tag blog-tag--{{ . | urlize }}">{{ . }}</span>{{ end }}
+            <span class="blog-date">{{ .Date.Format "Jan. 2, 2006" }}</span>
+        </div>
+        <div class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

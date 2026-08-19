@@ -1,10 +1,6 @@
 baseURL: https://josiehong.github.io/blog/
 languageCode: en-us
 title: "Josie's Log"
-theme: PaperMod
-
-pagination:
-  pagerSize: 10
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -14,55 +10,11 @@ buildExpired: false
 minify:
   disableXML: true
 
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON # required for PaperMod search
-
 params:
-  env: production
   description: "Yuhui (Josie) Hong's blog — study notes, projects, and wild thoughts."
   author: Yuhui Hong
-  defaultTheme: auto
-  ShowReadingTime: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowToc: true
-  ShowRssButtonInSectionTermList: true
-  math: true
 
-  homeInfoParams:
-    Title: "Josie's Log"
-    Content: >
-      Study notes, projects, and wild thoughts by
-      [Yuhui (Josie) Hong](https://josiehong.github.io).
-
-  socialIcons:
-    - name: github
-      url: "https://github.com/josiehong"
-    - name: rss
-      url: "https://josiehong.github.io/blog/index.xml"
-
-menu:
-  main:
-    - identifier: archive
-      name: Archive
-      url: /archives/
-      weight: 10
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 20
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 30
-    - identifier: home
-      name: "About me ↗"
-      url: "https://josiehong.github.io"
-      weight: 40
+disableKinds: ["taxonomy", "term"]
 
 markup:
   goldmark:

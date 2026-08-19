@@ -1,6 +1,6 @@
 # Josie's Log
 
-Personal blog at [josiehong.github.io/blog](https://josiehong.github.io/blog/), built with [Hugo](https://gohugo.io/) and the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme.
+Personal blog at [josiehong.github.io/blog](https://josiehong.github.io/blog/), built with [Hugo](https://gohugo.io/) and a small custom theme (`layouts/` + `static/`) that reuses the styles of [josiehong.github.io](https://josiehong.github.io) so the blog matches the homepage.
 
 ## Writing a new post
 
@@ -31,6 +31,6 @@ GitHub Actions builds and deploys automatically on every push to `main`.
 ## Setup on a new machine
 
 ```bash
-git clone --recurse-submodules git@github.com:josiehong/blog.git
+git clone git@github.com:josiehong/blog.git
 brew install hugo
 ```
