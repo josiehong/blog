@@ -1,7 +1,7 @@
 ---
 title: "From 1D to 3D: Calculating Glycan Structures with the GAFF Force Field from IUPAC Name"
 date: 2025-03-23
-tags: ["study-notes", "cheminformatics", "glycan", "open-babel"]
+tags: ["Cheminformatics"]
 categories: ["Study Notes"]
 summary: "Installing Open Babel and GlyLES, then converting glycan IUPAC names into 3D structures using the General Amber Force Field (GAFF)."
 ---

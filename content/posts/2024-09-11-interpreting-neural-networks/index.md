@@ -1,7 +1,7 @@
 ---
 title: "Interpreting Neural Networks: What Exactly Are We Analyzing?"
 date: 2024-09-11
-tags: ["wild-thoughts", "interpretability", "deep-learning"]
+tags: ["Deep Learning", "Interpretation"]
 categories: ["Wild Thoughts"]
 summary: "What are we talking about when we discuss interpretable models? Thoughts on human-centric vs. model-centric explanations."
 ---

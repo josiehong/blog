@@ -27,5 +27,15 @@ markup:
   goldmark:
     renderer:
       unsafe: true # allow raw HTML in migrated Markdown posts
+    extensions:
+      passthrough: # hand math straight to KaTeX, skipping Markdown parsing
+        enable: true
+        delimiters:
+          block:
+            - ['$$', '$$']
+            - ['\[', '\]']
+          inline:
+            - ['$', '$']
+            - ['\(', '\)']
   highlight:
     noClasses: false
