@@ -1,7 +1,7 @@
 ---
 title: "Anti-addiction Sudoku: Solving Sudoku with Human Techniques and Constraint Programming"
 date: 2026-04-10
-tags: ["project", "constraint-programming", "python", "sudoku"]
+tags: ["Algorithm", "Sudoku"]
 categories: ["Project"]
 summary: "Human Sudoku solving techniques, how constraint programming formalizes them, and a Python tool that solves any puzzle instantly and explains its reasoning."
 ---
